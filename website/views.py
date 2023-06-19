@@ -1,6 +1,10 @@
 from django.shortcuts import render
+import datetime
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'website/index.html')
+    today = datetime.date.today()
+    return render(request, 'website/index.html', {
+        'today': today,
+    })

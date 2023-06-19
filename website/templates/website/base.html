@@ -12,7 +12,7 @@
     {% tailwind_css %}
     
 </head>
-<body class="text-white bg-[rgb(10,10,10)]">
+<body class="text-white bg-black">
     <div class="flex h-screen">
         <div 
             class="
@@ -25,7 +25,7 @@
                 my-auto
                 rounded-full
                 px-2 py-2.5
-                bg-[rgb(20,20,20)]
+                bg-[#121212]
                 mx-4
                 transition
                 ease-in-out
@@ -36,16 +36,21 @@
             <div class="mb-2 relative rounded-full group">
                 <button class="w-12 h-12 rounded-full hover:bg-black hover:text-white">
                     <i class="fa-solid fa-house fa-lg"></i>
-                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Home</div>
+                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Dashboard</div>
                 </button>
-
-                
             </div>
 
             <div class="mb-2 relative rounded-full group">
                 <button class="w-12 h-12  rounded-full hover:bg-black hover:text-white">
-                    <i class="fa-solid fa-barcode fa-lg"></i>
-                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Scan</div>
+                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Search</div>
+                </button>
+            </div>
+
+            <div class="mb-2 relative rounded-full group">
+                <button class="w-12 h-12  rounded-full hover:bg-black hover:text-white">
+                    <i class="fa-solid fa-folder fa-lg"></i>
+                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Projects</div>
                 </button>
             </div>
 
@@ -58,28 +63,38 @@
 
             <div class="mb-2 relative rounded-full group">
                 <button class="w-12 h-12  rounded-full hover:bg-black hover:text-white">
-                    <i class="fa-solid fa-cart-shopping fa-lg"></i>
-                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Cart</div>
+                    <i class="fa-solid fa-barcode fa-lg"></i>
+                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Scan</div>
                 </button>
             </div>
 
             <div class="relative rounded-full group">
                 <button class="w-12 h-12  rounded-full hover:bg-black hover:text-white">
-                    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
-                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Search</div>
+                    <i class="fa-solid fa-cart-shopping fa-lg"></i>
+                    <div class="absolute left-16 top-0 h-12 w-24 flex items-center justify-center text-sm font-semibold bg-black rounded-md invisible group-hover:visible">Cart</div>
                 </button>
             </div>
 
         </div>
 
-        <header class="h-20 w-full px-10 flex flex-row items-center justify-between">
-            <a href="/" class="text-2xl font-bold">pbj</a>
-
-            <a href="" class="bg-white text-black font-bold text-sm py-3 px-4 rounded-full">Sign out</a>
-        </header>
         
-        {% block body %}
-        {% endblock %}
+        <div class="flex-1 h-full py-4 pr-4">
+            <div class="w-full h-full overoverflow-hidden overflow-y-auto bg-[#121212] rounded-xl p-4 md:py-2 md:px-6">
+                <header class="h-fit py-4">
+                    <div class="w-full flex flex-row items-center justify-between">
+                        <a href="" class="font-bold text-2xl">PBJ.</a>
+                        <div class="flex gap-4">
+                            <a href="" class="flex items-center justify-center rounded-full aspect-1 h-10 bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 hover:scale-105 transition ease-in-out">JL</a>
+                        </div>
+                    </div>
+                    
+                </header>
+                
+                {% block body %}
+                
+                {% endblock %}
+            </div>
+        </div>
 
     </div>
 </body>
